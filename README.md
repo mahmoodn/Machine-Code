@@ -2,7 +2,7 @@ Firts code:
 
 Simply want to execute ADD instruction in C code.
 ```
-$ cat machine.c
+$ cat machine1.c
 void main()
 {
    __asm__("add %ecx, %eax");
@@ -12,7 +12,7 @@ void main()
 By default, AT&T format is used for assembly representation. Therefore, that line means `eax <- eax+ecx`. In order to use Intel representation, `-masm=intel` should be used in gcc command as below:
 
 ```
-$ gcc -masm=intel -g machine.c -o machine
+$ gcc -masm=intel -g machine1.c -o machine1
 ```
 
 OPCODE of the ADD instruction is `01 c1` which means `00000001 11000001` where
@@ -43,6 +43,7 @@ To test, that launch GDB and follow these steps.
 7- Verify the content of ecx.
 
 ```
+$ gdb ./machine1
 (gdb) set disassembly-flavor intel
 (gdb) disass /r main
 Dump of assembler code for function main:
