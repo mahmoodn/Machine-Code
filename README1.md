@@ -1,15 +1,7 @@
 Firts code:
-
 Simply want to execute ADD instruction in C code.
-```
-$ cat machine1.c
-void main()
-{
-   __asm__("add %ecx, %eax");
-}
-```
 
-By default, AT&T format is used for assembly representation. Therefore, that line means `eax <- eax+ecx`. In order to use Intel representation, `-masm=intel` should be used in gcc command as below:
+By default, AT&T format is used for assembly representation. Therefore, `add %ecx, %eax` means `eax <- eax+ecx`. In order to use Intel representation, `-masm=intel` should be used in gcc command as below:
 
 ```
 $ gcc -masm=intel -g machine1.c -o machine1
