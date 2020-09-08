@@ -18,7 +18,7 @@ R/M=001     -->   ecx code
 ```
 
 
-To test, that launch GDB and follow these steps.
+To test that, launch GDB and follow these steps.
 
 1- Tell it to use intel representation with `set disassembly-flavor intel`. 
 
